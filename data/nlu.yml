@@ -1,0 +1,56 @@
+version: "3.1"
+
+nlu:
+- intent: cumprimentar
+  examples: 
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - salve
+    - e ai?
+    - tudo bem?
+
+- intent: agradecer
+  examples: |
+    - obrigado
+    - muito obrigado
+    - valeu
+    - tamo junto
+    - agradeço
+    - grato
+
+- intent: informar_genero
+  examples: |
+  - gosto de [comédia](genero)
+  - quero ver um filme de [ação](genero)
+  - prefiro [drama](genero)
+  - me indica um filme de [suspense](genero)
+  - quero ver um filme de [terror](genero)
+  - quero ver um filme de [romance](genero)
+  - me indica um filme de [ficção cientifica](genero)
+
+- intent: negar
+  examples: |
+    - não
+    - não quero
+    - não gosto
+    - prefiro outro gênero
+    - não gostei
+
+- intent: despedir
+  examples: |
+    - tchau
+    - adeus
+    - até mais
+    - até a próxima
+
+- intent: afirmar
+  examples: |
+    - isso
+    - perfeito
+    - claro
+    - certo
+    - correto
+  

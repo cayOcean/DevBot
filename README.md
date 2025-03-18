@@ -1,2 +1,0 @@
-# DevBot
-ChatBot - Faculdade 
