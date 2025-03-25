@@ -8,7 +8,7 @@ class ActionInformaClima(Action):
         """
         Define o nome da action. Esse nome deve ser o mesmo registrado no domain.yml.
         """
-        return "actions"
+        return "action_informa_clima"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
