@@ -1,0 +1,40 @@
+version: "3.1"
+
+nlu:
+  - intent: relatar_problema
+    examples: |
+      - não consigo acessar minha conta
+      - quero mudar meu plano
+      - o aplicativo não funciona
+      - meu app está travando
+      - gostaria de trocar de plano
+      - esqueci minha senha
+      - estou com erro no login
+      - não estou conseguindo usar o aplicativo
+    entities:
+      - problema
+
+  - intent: saudacao
+    examples: |
+      - olá
+      - oi
+      - bom dia
+      - boa tarde
+      - boa noite
+    entities: []
+
+  - intent: agradecer
+    examples: |
+      - obrigado
+      - obrigada
+      - valeu
+      - muito obrigado
+      - muito obrigada
+    entities: []
+
+  - intent: negar
+    examples: |
+      - não
+      - não sei
+      - não entendi
+    entities: []

@@ -1,0 +1,37 @@
+version: "3.1"
+nlu:
+  - intent: cumprimentar
+    examples: |
+      - salve
+      - oi
+      - como você está?
+  - intent: agradecer
+    examples: |
+      - muito obrigado
+      - tmj!
+      - valeuuu
+  - intent: pedir_ajuda
+    examples: |
+      - Pode me ajudar?
+      - Preciso de ajuda
+      - Estou com um problema
+  - intent: informar_problema
+    examples: |
+      - não consigo acessar minha conta
+      - estou com um problema de login
+      - meu problema é com a senha
+  - intent: afirmar
+    examples: |
+      - sim
+      - perfeito
+      - exato
+  - intent: despedir
+    examples: |
+      - adeus
+      - até nunca mais
+      - que Deus o tenha
+  - intent: negar
+    examples: |
+      - nanão
+      - nem pá
+      - não é isso

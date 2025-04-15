@@ -1,0 +1,23 @@
+version: "3.1"
+
+stories:
+- story: fluxo de suporte com solução
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - action: utter_pedir_problema
+    - intent: relatar_problema
+      entities:
+        - problema: "acessar minha conta"
+    - slot_was_set:
+        - problema: "acessar minha conta"
+    - action: action_fornecer_suporte
+
+- story: fluxo com encaminhamento
+  steps:
+    - intent: relatar_problema
+      entities:
+        - problema: "aplicativo não funciona"
+    - slot_was_set:
+        - problema: "aplicativo não funciona"
+    - action: action_fornecer_suporte

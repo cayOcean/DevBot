@@ -1,0 +1,36 @@
+version: "3.1"
+
+language: pt
+
+intents:
+- relatar_problema
+- agradecer
+- negar
+- saudacao
+
+entities:
+- problema
+
+slots:
+  problema:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: problema
+
+responses:
+  utter_saudacao:
+  - text: "Olá! Sou o assistente virtual da Som na Nuvem. Como posso te ajudar hoje?"
+
+  utter_pedir_problema:
+  - text: "Por favor, me diga qual é o problema que você está enfrentando."
+
+  utter_agradecer:
+  - text: "De nada! Se precisar de mais alguma coisa, estarei por aqui. \U0001F3A7"
+
+  utter_encaminhar_atendente:
+  - text: "Entendo, isso parece mais complexo. Vou encaminhar você para um atendente humano. Um momento..."
+
+actions:
+- action_fornecer_suporte
+assistant_id: 20250415-203820-bare-tanker
