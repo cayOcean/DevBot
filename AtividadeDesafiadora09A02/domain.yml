@@ -1,0 +1,48 @@
+version: "3.1"
+
+intents:
+  - buscar_livro_titulo
+  - buscar_livro_autor
+  - buscar_livro_assunto
+
+entities:
+  - titulo_livro
+  - nome_autor
+  - assunto_livro
+
+slots:
+  titulo_livro:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: titulo_livro
+        role: null
+
+  nome_autor:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nome_autor
+        role: null
+
+  assunto_livro:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: assunto_livro
+        role: null
+
+responses:
+  utter_ask_titulo:
+    - text: "Qual o título do livro que você deseja buscar?"
+  utter_ask_autor:
+    - text: "Qual o nome do autor que você procura?"
+  utter_ask_assunto:
+    - text: "Sobre qual assunto você quer um livro?"
+  utter_default:
+    - text: "Desculpe, não entendi. Pode tentar reformular?"
+
+actions:
+  - action_buscar_livro_titulo
+  - action_buscar_livro_autor
+  - action_buscar_livro_assunto

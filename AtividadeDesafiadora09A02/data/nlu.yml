@@ -1,0 +1,18 @@
+version: "3.1"
+
+nlu:
+- intent: buscar_livro_titulo
+  examples: |
+    - Quero um livro chamado [Dom Casmurro](titulo_livro)
+    - Você tem o livro [1984](titulo_livro)?
+    - Gostaria de saber mais sobre o livro [A Metamorfose](titulo_livro)
+
+- intent: buscar_livro_autor
+  examples: |
+    - Livros escritos por [Machado de Assis](nome_autor)
+    - Quero ver obras de [George Orwell](nome_autor)
+
+- intent: buscar_livro_assunto
+  examples: |
+    - Me mostre livros sobre [ficção científica](assunto_livro)
+    - Tem livros sobre [história do Brasil](assunto_livro)?

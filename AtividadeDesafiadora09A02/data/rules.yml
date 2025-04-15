@@ -1,0 +1,22 @@
+version: "3.1"
+
+rules:
+- rule: Responder busca por título
+  steps:
+    - intent: buscar_livro_titulo
+    - action: action_buscar_livro_titulo
+
+- rule: Responder busca por autor
+  steps:
+    - intent: buscar_livro_autor
+    - action: action_buscar_livro_autor
+
+- rule: Responder busca por assunto
+  steps:
+    - intent: buscar_livro_assunto
+    - action: action_buscar_livro_assunto
+
+- rule: Mensagem padrão para dúvidas
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default
