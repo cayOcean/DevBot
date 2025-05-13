@@ -1,91 +1,88 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+version: "3.1"
 
 stories:
-- story: happy path 1
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
 
-- story: happy path 2
+# 😄 Cenário feliz com cumprimentos
+- story: Cenário feliz - saudação e despedida
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+    - user: |
+        oi!
+      intent: greet
+    - action: utter_greet
+    - user: |
+        estou ótimo
+      intent: mood_great
+    - action: utter_happy
+    - user: |
+        até mais
+      intent: goodbye
+    - action: utter_goodbye
 
-- story: sad path 1
+# 😔 Cenário triste com recuperação
+- story: Cenário triste - tentativa de animar
   steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+    - user: |
+        oi
+      intent: greet
+    - action: utter_greet
+    - user: |
+        estou mal hoje
+      intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - user: |
+        sim, ajudou
+      intent: affirm
+    - action: utter_happy
 
-- story: sad path 2
+# 😞 Cenário triste sem melhora
+- story: Cenário triste - não ajudou
   steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+    - user: |
+        olá
+      intent: greet
+    - action: utter_greet
+    - user: |
+        péssimo dia
+      intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - user: |
+        infelizmente não
+      intent: deny
+    - action: utter_goodbye
 
-- story: sad path 3
+# 📖 Cenário de busca por título de livro
+- story: Buscar livro por título
   steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+    - user: |
+        quero o livro [1984](titulo_livro)
+      intent: buscar_livro_titulo
+    - action: utter_ask_titulo
+    - action: action_buscar_livro_titulo
 
-- story: say goodbye
+# 👨‍💼 Cenário de busca por autor
+- story: Buscar livro por autor
   steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+    - user: |
+        livros de [Machado de Assis](nome_autor)
+      intent: buscar_livro_autor
+    - action: utter_ask_autor
+    - action: action_buscar_livro_autor
 
-- story: bot challenge
+# 📚 Cenário de busca por assunto
+- story: Buscar livro por assunto
   steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+    - user: |
+        livros sobre [história do Brasil](assunto_livro)
+      intent: buscar_livro_assunto
+    - action: utter_ask_assunto
+    - action: action_buscar_livro_assunto
+
+# ❓ Cenário de fallback
+- story: Fallback padrão
+  steps:
+    - user: |
+        asdfghjkl
+      intent: nlu_fallback
+    - action: utter_default

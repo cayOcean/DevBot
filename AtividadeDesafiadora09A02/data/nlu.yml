@@ -1,18 +1,34 @@
 version: "3.1"
 
 nlu:
+
+# 🔍 Buscar livro por título
 - intent: buscar_livro_titulo
   examples: |
     - Quero um livro chamado [Dom Casmurro](titulo_livro)
     - Você tem o livro [1984](titulo_livro)?
     - Gostaria de saber mais sobre o livro [A Metamorfose](titulo_livro)
+    - Estou procurando por [O Pequeno Príncipe](titulo_livro)
+    - Tem o livro [O Senhor dos Anéis](titulo_livro)?
+    - Onde posso encontrar [O Hobbit](titulo_livro)?
+    - Me mostre informações sobre [Cem Anos de Solidão](titulo_livro)
 
+# 🧑‍🏫 Buscar livro por autor
 - intent: buscar_livro_autor
   examples: |
     - Livros escritos por [Machado de Assis](nome_autor)
     - Quero ver obras de [George Orwell](nome_autor)
+    - Mostre livros de [Clarice Lispector](nome_autor)
+    - Tem livros do autor [J.K. Rowling](nome_autor)?
+    - Gostaria de ler algo de [José Saramago](nome_autor)
+    - Algum livro escrito por [Stephen King](nome_autor)?
 
+# 📚 Buscar livro por assunto
 - intent: buscar_livro_assunto
   examples: |
     - Me mostre livros sobre [ficção científica](assunto_livro)
     - Tem livros sobre [história do Brasil](assunto_livro)?
+    - Gostaria de algo relacionado a [filosofia](assunto_livro)
+    - Você tem livros de [autoajuda](assunto_livro)?
+    - Preciso de livros sobre [psicologia](assunto_livro)
+    - Pode me recomendar algo sobre [tecnologia](assunto_livro)?

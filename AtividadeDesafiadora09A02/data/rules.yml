@@ -1,22 +1,30 @@
 version: "3.1"
 
 rules:
+
+# Regra para buscar livro por título
 - rule: Responder busca por título
   steps:
     - intent: buscar_livro_titulo
+    - action: utter_ask_titulo
     - action: action_buscar_livro_titulo
 
+# Regra para buscar livro por autor
 - rule: Responder busca por autor
   steps:
     - intent: buscar_livro_autor
+    - action: utter_ask_autor
     - action: action_buscar_livro_autor
 
+# Regra para buscar livro por assunto
 - rule: Responder busca por assunto
   steps:
     - intent: buscar_livro_assunto
+    - action: utter_ask_assunto
     - action: action_buscar_livro_assunto
 
-- rule: Mensagem padrão para dúvidas
+# Regra para fallback (mensagem padrão)
+- rule: Mensagem padrão para dúvidas ou erros de compreensão
   steps:
     - intent: nlu_fallback
     - action: utter_default
